@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+
+<body>
+<script>
+    var str = '今天是2019年11月1号，星期五';
+    var reg = /(\d{2,4})年(\d{1,2})月(\d{1,2})号/;
+    var r = reg.exec(str);
+    console.log(r);
+
+    var str = 'hqyj的官网是hqyj.com';
+
+    // 简单的创建方法   这种模式不支持表达式   对象 .
+    var reg = /hqyj/;
+    var r = str.match(reg);
+    console.log(r);
+
+    // 标准方式  支持表达式   对象的  []
+    var hqyj = '官网';
+    var regexp = new RegExp('hqyj');
+    console.log(str.match(regexp));
+
+    var str = 'hqyj的官网123是hqyj.com';
+    // 字面量正则表达式
+    var reg = /123/;
+    console.log(str.match(reg));
+
+
+    var reg1 = 'com';
+    console.log(str.match(reg1));
+
+
+    var ss = '今天飞机飞天津';
+    var reg = /'飞'/g;
+    console.log(str.match(str));
+</script>
+</body>
+
+</html>
